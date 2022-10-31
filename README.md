@@ -1,31 +1,70 @@
+# Getting Started with Create React App
 
-# VIT Marketplace
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Objective: The main goal of this website would be to provide a platform to connect the students of vit who want to either buy or sell their belongings.
+## Available Scripts
 
-## Workflow:
+In the project directory, you can run:
 
-A student first needs to sign up and details such as: Name, prn, email.id, contact no. must be provided mandatorily and he/she can also provide some additional information about their social media handles.
+### `npm start`
 
-## UI/UX:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The site can be primarily divided into 4 parts: Explore, Recent Activity, Adding a post, User Profile.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### The Explore Page
+### `npm test`
 
-The Explore area will display all the random posts and there will be a search mechanism so that the user can look for their desired item.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Structure of a post:
+### `npm run build`
 
-1. Images
-2. Title
-3. Description (which will contain info about the condition of the item)
-4. Minimum cost
-5. Interested button
-6. The 'Interested' mechanism
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-If a user wants to buy a particular item then he can click on the interested button so a mail will be triggered and sent to the author of the post and it will also reflect in the recent activity section of the author that someone is interested in his post (the username of the person interested will also be displayed) so now the author will have two options either to accept or reject the request. If the author accepts the request then again a mail will be triggered and sent to the interested person listing all the contact details of the author, it will also reflect in the recent activity section of the interested person. The mail will contain the contact details of the author. The post will be closed after this. If the author rejects the req then the interested person will be informed through mail and the recent activity section.
-Adding a post
-Through this page a user can simply add a post about the item he needs to sell.
-The profile page
-Profile will basically contain all the info about the user and a functionality to edit his profile. Also, this page will display all the posts of the user.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
