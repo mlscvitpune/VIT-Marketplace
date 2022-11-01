@@ -8,7 +8,13 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
+import { useNavigate, useLocation } from 'react-router-dom';
+
 const Navbar = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <div style={{ padding: "15px", border: "1px solid lightgray" }}>
       <Flex minWidth='max-content' alignItems='center' gap='2'>
@@ -17,8 +23,26 @@ const Navbar = () => {
         </Box>
         <Spacer />
         <ButtonGroup gap='2'>
-          <Button colorScheme='teal'>Sign In</Button>
-          <Button colorScheme='pink'>Sign Up</Button>
+          {
+            (() => {
+              if (location.pathname === '/home' || location.pathname === '/signup' || location.pathname === '/login') {
+                return (
+                  <>
+                    <Button colorScheme='teal' onClick={() => { navigate('/login') }}>Login</Button>
+                    <Button colorScheme='teal' onClick={() => { navigate('/signup') }}>Sign Up</Button>
+                  </>
+                );
+              } else {
+                return (
+                  <>
+                    <Button colorScheme='teal' onClick={() => { navigate('/shop') }}>Shop</Button>
+                    <Button colorScheme='teal' onClick={() => { navigate('/cart') }}>Cart</Button>
+                    <Button colorScheme='teal' onClick={() => { navigate('/login') }}>Logout</Button>
+                  </>
+                );
+              }
+            })()
+          }
         </ButtonGroup>
       </Flex>
     </div>
