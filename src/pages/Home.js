@@ -1,9 +1,16 @@
 import React from "react";
+import Navbar from "../components/Navbar/Navbar";
+import Login from "../components/Login";
+import Signup from "../components/SignUp";
 
-const Home = () => {
+const Home = (props) => {
   return <>
-    <div className="text-3xl text-gray-700 font-bold mb-5">
-      Home with tailwindcss
+    <div>Col 1</div>
+    <div>Col 2</div>
+    <div>
+      {
+        props.isLogin ? <Login/> : <Signup/>
+      }
     </div>
   </>
 };
