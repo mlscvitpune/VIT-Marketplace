@@ -1,13 +1,15 @@
 import React from "react";
 import "./Footer.css";
 import logo from "../../assets/images/eco-logo.png";
-
+import { useLocation } from "react-router-dom";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const year = new Date().getFullYear();
-
+  const location = useLocation();
+  // if (location.pathname === '/home' || location.pathname === '/signup' || location.pathname === '/login')
+  //   return null;
   return (
     <footer className='footer'>
       <Container>
