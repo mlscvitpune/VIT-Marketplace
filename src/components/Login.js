@@ -10,8 +10,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   return <>
-    <div className="overflow-x:hidden w-3/4 h-3/4 mx-auto sm:mx-0 mt-10 sm:mt-20">
-      <div className="flex flex-col justify-center items-center bg-[#F9F9F9] pr-2 rounded-lg sm:rounded-sm">
+    <div className="overflow-x:hidden w-3/4 h-3/4 mx-auto sm:mx-0 mt-10 sm:mt-10">
+      <div className="flex flex-col justify-center items-center bg-[#F9F9F9] pr-2 rounded-lg">
         <div className="title text-center">
           <p className="text-2xl text-black py-6"> Login to <b>VIT MarketPlace</b></p>
         </div>
@@ -24,7 +24,7 @@ const Login = () => {
           <button className="bg-[#0071FF] text-xl text-white px-8 h-10 rounded-md">Login</button>
         </div>
         <div className="pb-8">
-          <p className="text-sm text-black py-6">Don't have an account? <b onClick={() => { navigate('/signup') }}>Sign Up</b></p>
+          <p className="text-sm text-black py-6">Don't have an account? <b className="cursor-pointer" onClick={() => { navigate('/signup') }}>Sign Up</b></p>
           <br /><br />
         </div>        
       </div>
