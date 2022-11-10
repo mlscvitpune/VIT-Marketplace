@@ -7,6 +7,7 @@ import Cart from "../pages/Cart";
 import ProductDetails from "../pages/ProductDetails";
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
+import UserProfile from "../pages/UserProfile";
 
 const Routers = () => {
   return (
@@ -18,6 +19,7 @@ const Routers = () => {
       <Route path='cart' element={<Cart />} />
       <Route path='login' element={<Home isLogin={true} />} />
       <Route path='signup' element={<Home isLogin={false} />} />
+      <Route path='UserProfile' element={<UserProfile />} />
     </Routes>
   );
 };
