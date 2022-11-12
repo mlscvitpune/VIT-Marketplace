@@ -1,0 +1,31 @@
+.fade img {
+    animation: fade 0.1s ease-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.sliderContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.sliderImg {
+    width: 100%;
+}
+
+.sliderSize {
+    width: 100vw;
+}
+
+.arrows {
+    position: absolute;
+    top: 290px;
+}
