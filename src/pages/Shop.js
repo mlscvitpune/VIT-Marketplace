@@ -1,17 +1,17 @@
 import { Box, Button, Container,Text,InputGroup,Input,InputRightAddon, Flex, SimpleGrid} from "@chakra-ui/react";
 import React from "react";
-import Slider from '../components/Slider/Slider'
+import Dash from "../components/DashStart/Dash";
 const Shop = () => {
 
   return (
     <>
-    <div className="bg-primary">
+    <div >
       <Container centerContent p='0' >
-        <Slider/>
+        <Dash/>
         <Box width={['70vw', '30em', '48em', '62em', '80em']} display='flex' justifyContent='center' m='10px'>
-          <Button margin={['8px','15px']}  borderRadius='0'  border='0' variant='link' _hover='none' ><Text border='0' fontFamily='sans-serif' fontWeight='normal'fontSize={['13px','md','lg','2xl']} color='white' _hover={{color:'black', borderBottom:'2px'}}>Latest</Text> </Button>
-          <Button margin={['8px','15px']}  borderRadius='0' border='0'  variant='link'  _hover='none' ><Text border='0' fontFamily='sans-serif' fontWeight='normal'fontSize={['13px','md','lg','2xl']} color='white' _hover={{color:'black', borderBottom:'2px'}}>Hardware</Text> </Button>
-          <Button margin={['8px','15px']} borderRadius='0' border='0'  variant='link' _hover='none' ><Text border='0' fontFamily='sans-serif'  fontWeight='normal' fontSize={['13px','md','lg','2xl']} color='white' _hover={{color:'black', borderBottom:'2px'}}>Appliances</Text> </Button>
+          <Button margin={['8px','15px']}  borderRadius='0'  border='0' variant='link' _hover='none' ><Text border='0' fontFamily='sans-serif' fontWeight='normal'fontSize={['13px','md','lg','2xl']} color='black' _hover={{color:'black', borderBottom:'2px'}}>Latest</Text> </Button>
+          <Button margin={['8px','15px']}  borderRadius='0' border='0'  variant='link'  _hover='none' ><Text border='0' fontFamily='sans-serif' fontWeight='normal'fontSize={['13px','md','lg','2xl']} color='black' _hover={{color:'black', borderBottom:'2px'}}>Hardware</Text> </Button>
+          <Button margin={['8px','15px']} borderRadius='0' border='0'  variant='link' _hover='none' ><Text border='0' fontFamily='sans-serif'  fontWeight='normal' fontSize={['13px','md','lg','2xl']} color='black' _hover={{color:'black', borderBottom:'2px'}}>Appliances</Text> </Button>
         </Box>
         <Box width={['70vw', '30em', '48em', '62em', '80em']} display='flex' justifyContent='center'>
           <InputGroup>
@@ -21,29 +21,36 @@ const Shop = () => {
         </Box>
         <Flex mt='20px' flexDirection='column'>
           <Flex display='flex' justifyContent='flex-start' w={['70vw', '30em', '48em', '62em', '80em']} mb='20px'>
-            <Text fontSize={['md','md','lg','3xl']} color='white'>Trending</Text>
+            <Text fontSize={['md','md','lg','3xl']} color='black'>Trending</Text>
           </Flex>
-          <SimpleGrid columns={['2','2','3']} spacing={10} gap='10px'>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
+          <SimpleGrid columns={['2','3','3','5']} spacing={10} gap='10px'>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+         
+          
+
  
           </SimpleGrid>
         </Flex>
         <Flex mt='20px' flexDirection='column'>
           <Flex display='flex' justifyContent='flex-start' w={['70vw', '30em', '48em', '62em', '80em']} mb='20px'>
-            <Text fontSize={['md','md','lg','3xl']} color='white'>Fresh Recommendations</Text>
+            <Text fontSize={['md','md','lg','3xl']} color='black'>Fresh Recommendations</Text>
           </Flex>
-          <SimpleGrid columns={['2','2','3']} spacing={10} gap='10px'>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
-            <Box bg='blue.100' height={['5rem','10rem','15rem']} borderRadius='5px'></Box>
+          <SimpleGrid columns={['2','3','3','5']} spacing={10} gap='10px'>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+            <Box bg='blue.100' height={['10rem','15rem','19rem']} borderRadius='5px'></Box>
+          
  
           </SimpleGrid>
         </Flex>
