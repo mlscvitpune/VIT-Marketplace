@@ -23,8 +23,7 @@ const Login = () => {
     });
 
     const data = await res.json();
-
-    if (res.status === 400 || res.status === 404 || !data) {
+    if (res.status === 400 || res.status === 404) {
       window.alert("Invalid Credentials");
     } else {
       window.alert("Login Successful");
