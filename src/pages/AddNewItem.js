@@ -2,7 +2,7 @@ import React from 'react'
 import SingleItemView from './SingleItemView';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import create from '../apiCalls';
+import {create} from '../apiCalls';
 
 function AddNewItem() {
   const [TITLE, setTITLE] = useState('');
@@ -39,7 +39,7 @@ function AddNewItem() {
 
   return (
     <div className="min-w-full	 min-h-screen inline-flex overflow-hidden h-full items-center ">
-      <div className="w-1/3  h-full min-h-full inline-flex flex-col	 relative aitems-center  truncate	 bg-white">
+      <div className="w-1/3  h-full min-h-full inline-flex flex-col	relative aitems-center truncate	 bg-white">
         <div>
           <input type="file" multiple onChange={handleChange} />
           <img src={file} />
