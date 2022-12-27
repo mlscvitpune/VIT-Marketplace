@@ -27,6 +27,7 @@ const Login = () => {
       window.alert("Invalid Credentials");
     } else {
       localStorage.setItem('user', name)
+      window.localStorage.setItem("token",data.token);
       window.alert("Login Successful");
       navigate('/shop');
     }

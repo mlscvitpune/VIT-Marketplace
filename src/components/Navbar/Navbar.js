@@ -41,6 +41,9 @@ const Navbar = () => {
                     <Button colorScheme='teal' onClick={() => { navigate('/cart') }}>Cart</Button>
                     <Button colorScheme='teal' onClick={() => { navigate('/login') }}>Logout</Button>
                     <Button colorScheme='teal' onClick={() => { navigate('/newItem') }}>Add Item</Button>
+                    <Button colorScheme='teal' onClick={() => { 
+                      window.localStorage.removeItem("token") 
+                      navigate('/login') }}>Logout</Button>
                     <AvatarGroup spacing='1rem'>
                       <Avatar bg='teal.500' onClick={() => { navigate('/UserProfile') }}/>
                     </AvatarGroup>
