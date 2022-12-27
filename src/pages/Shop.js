@@ -16,14 +16,6 @@ import Items from "../components/Shop/Items";
 
 
 const Shop = (userprofile, username = "") => {
-
-  useEffect(() => {
-    const displayItems = async () => {
-      const response = display("http://localhost:5000/item/read");
-    };
-    displayItems();
-  }, [userprofile]);
-
   return (
     <>
       <div>
@@ -117,7 +109,7 @@ const Shop = (userprofile, username = "") => {
             </InputGroup>
           </Box>
 
-          <Items userprofile={false} />
+          <Items userprofile = {false}/>
 
           <Flex mt="20px" flexDirection="column">
             <Flex

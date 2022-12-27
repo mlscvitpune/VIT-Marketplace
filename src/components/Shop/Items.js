@@ -9,33 +9,40 @@ import {
     InputRightAddon,
     Flex,
     SimpleGrid,
+    useAccordion,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import Dash from "../DashStart/Dash";
-import { display } from "../../apiCalls";
+import { display, delete_item } from "../../apiCalls";
 
-const Items = (userprofile, username = "") => {
+const Items = (props) => {
     const [items, setItems] = React.useState();
+    // const [id, setId] = React.useState();
+
     useEffect(() => {
         const displayItems = async () => {
-            const response = await display("http://localhost:5000/item/read");
+            const response = await display("http://localhost:5000/item/read", props.userprofile, props.username);
             setItems(response.items);
         };
         displayItems();
-    }, [userprofile]);
+    }, [props.userprofile]);
+
+    const deleteItem = async (id) => {
+        console.log(id);
+        const res = await delete_item("http://localhost:5000/item/delete", id);
+        window.alert(res.message);
+        window.location.reload();
+    };
 
     return (
         <div>
-            <Flex mt="20px" flexDirection="column">
+            <Flex className="p-2" mt="20px" flexDirection="column">
                 <Flex
                     display="flex"
                     justifyContent="flex-start"
                     w={["70vw", "30em", "48em", "62em", "80em"]}
                     mb="20px"
                 >
-                    <Text fontSize={["md", "md", "lg", "3xl"]} color="black">
-                        Trending
-                    </Text>
                 </Flex>
                 <SimpleGrid columns={["2", "3", "3", "5"]} spacing={10} gap="10px">
                     {items &&
@@ -75,6 +82,7 @@ const Items = (userprofile, username = "") => {
                                     >
                                         Seller: {item.username}
                                     </Text>
+                                    {props.userprofile ? <Button onClick={()=>{deleteItem(item._id)}} className="flex p-0.5 justify-center">Delete</Button> : <Button className="flex justify-center p-0.5">Add to cart</Button>}
                                 </Box>
                             );
                         }).reverse()}

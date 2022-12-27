@@ -3,14 +3,13 @@ import Form from '../components/Form/Form'
 import img from '../components/Images/Profile.jpeg'
 import { Image, GridItem, Grid, Button, Box, Text, Center } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
-
+import Items from '../components/Shop/Items'
 
 const UserProfile = () => {
     const property = {    
         reviewCount: 34,
         rating: 4,
     }
-
   return (
     <div >
         <div>
@@ -66,6 +65,7 @@ const UserProfile = () => {
             </GridItem>
         </Grid>
         </div>
+        <Items userprofile = {true} username={localStorage.getItem('user')} /> 
     </div>
   )
 }

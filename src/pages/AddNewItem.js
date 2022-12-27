@@ -7,7 +7,6 @@ import {create} from '../apiCalls';
 function AddNewItem() {
   const [TITLE, setTITLE] = useState('');
   const [Category, setCategory] = useState('');
-  const [UserName, setUserName] = useState('');
   const [SP, setSP] = useState('');
   const [Quantity, setQuantity] = useState('');
   const [Description, setDesc] = useState('');
@@ -16,7 +15,9 @@ function AddNewItem() {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
-
+  
+  const UserName = localStorage.getItem('user')
+  
   function handleSubmit() {
     const data = {
       username: UserName,
@@ -48,8 +49,6 @@ function AddNewItem() {
       </div>
 
       <div className="w-1/3  h-full min-h-screen inline-flex flex-col	 relative justify-items-center justify-around items-center border-dashed border-x-2 truncate	 bg-gradient-to-r from-[#0071FF] to-blue-200">
-        <p className="text-2xl text-center	 text-black py-6"> Username:</p>
-        <input type="text" placeholder="UserName" className="w-3/6 sm:w-11/12 h-10 border-2 m-3  border-gray-300 rounded-md p-2" value={UserName} onChange={(e) => setUserName(e.target.value)} />
 
         <p className="text-2xl text-center	 text-black py-6"> Title:</p>
         <input type="text" placeholder="Title" className="w-3/6 sm:w-11/12 h-10 border-2 m-3  border-gray-300 rounded-md p-2" value={TITLE} onChange={(e) => setTITLE(e.target.value)} />
