@@ -1,7 +1,6 @@
 import React from 'react'
 
 const SingleItemView = (props) => {
-();
   return (
     <div className='w-full	h-auto 	flex	min-h-full	items-center	flex-col sm:text-left sm:h-full sm:w-full overflow-x-hidden overflow-y-auto	'>
       <div className='w-screen 	flex basis-1/2 sm:flex-col	max-w-max	relative	my-[5%]	items-center	 flex-row	 border-b-4 border-solid	justify-between	'>
@@ -34,6 +33,7 @@ const SingleItemView = (props) => {
           alt="image"
           src="https://images.unsplash.com/photo-1619314528204-59477dba78d2?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1500"
           className='w-1/2 h-3/4 items-center float-left '
+          //TODO: Add images and adjust to small screen
           />
           </div>
       </div>

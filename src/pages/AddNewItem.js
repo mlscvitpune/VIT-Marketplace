@@ -3,7 +3,7 @@ import SingleItemView from './SingleItemView';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
- function AddNewItem () {
+const AddNewItem = () => {
   const [TITLE, setTITLE] = useState('');
   const [Category, setCategory] = useState('');
   const [MRP, setMRP] = useState('');
@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
   const [Quantity, setQuantity] = useState('');
   const [Description, setDesc] = useState('');
   const [file, setFile] = useState();
+  const navigate = useNavigate();
     function handleChange(e) {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
@@ -52,8 +53,12 @@ import { useNavigate } from "react-router-dom";
       </div>
       <div className="w-[50%]  h-full min-h-full inline-flex flex-col	 relative items-center truncate">
           <button className="bg-[#0071FF] text-xl text-white px-8 h-10 rounded-md" 
-          >Done</button>
+          ><b className="cursor-pointer" onClick={() => { navigate('/SingleItemView') }}>Done</b></button>
         </div>
+        {/* <div className="pb-8">
+          <p className="text-sm text-black py-6">Don't have an account? <b className="cursor-pointer" onClick={() => { navigate('/signup') }}>Sign Up</b></p>
+          <br /><br />
+        </div>   */}
         </div>
     </div>
   )
