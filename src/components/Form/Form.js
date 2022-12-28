@@ -17,7 +17,7 @@ const Form = () => {
             <form>
                 <div>
                     <FormLabel>Username</FormLabel>
-                        <Input htmlSize={40} width='auto' type='text' placeholder='Username' />
+                        <Input htmlSize={40} width='auto' type='text' placeholder={localStorage.getItem('user')} />
                 </div>
 
                 <div>

@@ -1,7 +1,9 @@
 // execute database connection
 const dbConnect = require("./db/dbConnect");
 dbConnect();
+
 const User = require("./db/UserModel");
+const Item = require("./db/ItemModel");
 
 const express = require("express");
 const app = express();
@@ -13,6 +15,9 @@ const authMiddleware=require('./middleware/auth');
 app.use(cors());
 
 app.use(express.json());
+
+const itemRoutes = require('./crud');
+app.use('/item', itemRoutes);
 
 const port = process.env.PORT || 5000;
 
