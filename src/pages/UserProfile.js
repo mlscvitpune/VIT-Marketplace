@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Form from '../components/Form/Form'
 import img from '../components/Images/Profile.jpeg'
 import { SocialIcon } from "react-social-icons";
-import {   
+import {
   Image,
   Button,
   Box,
@@ -14,7 +14,9 @@ import {
   CardBody,
   Center,
   Heading,
-  IconButton, 
+  IconButton,
+  useMediaQuery,
+  Flex,
 } from '@chakra-ui/react'
 import { StarIcon, EditIcon } from '@chakra-ui/icons'
 import Items from '../components/Shop/Items'
@@ -32,11 +34,12 @@ const UserProfile = () => {
     rating: 4,
   };
 
-  const handleSubmit = () => {};
+  const [isSmallViewport ] = useMediaQuery("(max-width:600px)")
+
   return (
     <>
-      <HStack spacing={"44"}>
-        <Box p={5}>
+      <Stack spacing={"44"} direction={isSmallViewport  ? "column" : "row"}>  
+        <Box p={5} >
           <Center>
             <Card p={4} size={"lg"}>
               <Box alignSelf={'center'}>
@@ -54,7 +57,6 @@ const UserProfile = () => {
                     alt="User"
                   />
                   <Button
-                    onClick={handleSubmit}
                     colorScheme="teal"
                     variant="solid"
                   >
@@ -81,7 +83,6 @@ const UserProfile = () => {
                   </Box>
                 </Stack>
               </CardBody>
-
               <Stack spacing="1">
                 <Text textAlign={"center"}>name</Text>
                 <Text textAlign={"center"}>Email ID</Text>
@@ -96,7 +97,6 @@ const UserProfile = () => {
                 icon={<EditIcon />}
               />
             </Box>
-
             <HStack spacing={"5"} align="center" p={5}>
               ReactDOM.render(
               <SocialIcon url="https://linkedin.com/" />, document.body);
@@ -107,11 +107,10 @@ const UserProfile = () => {
             </HStack>
           </Card>
         </Box>
-        <Box>
-          <Form />
-        </Box>
-      </HStack>
-      <Items userprofile = {true} username={localStorage.getItem('user')} /> 
+        <Form />
+      </Stack>
+      
+      <Items userprofile={true} username={localStorage.getItem('user')} />
     </>
   )
 }

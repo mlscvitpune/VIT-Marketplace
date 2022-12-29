@@ -14,15 +14,16 @@ import {
   Card,
   Select,
   InputLeftElement,
+  Flex,
   } from '@chakra-ui/react'
   import { PhoneIcon } from "@chakra-ui/icons";
 
 
 const Form = () => {
   return (
-        <VStack spacing={10} p={4}>
+      <VStack spacing={10} p={4}>
           <Card p={5}>
-            <Box p={4}>
+            <Box p={4} >
               <Heading size={"md"}>Personal Details</Heading>
             </Box>
             <HStack spacing={"40"} p={5}>
@@ -93,9 +94,9 @@ const Form = () => {
               <FormLabel htmlFor="address">Address</FormLabel>
               <Textarea placeholder="Enter your address" />
             </FormControl>
-            <HStack spacing={"10"} p={5}>
+            <HStack spacing={"5"} p={5}>
               <Button bgColor={"cyan.500"}>Save</Button>
-              <Button bgColor={"White"}>cancel</Button>
+              <Button bgColor={"grey"}>cancel</Button>
             </HStack>
           </Card>
         </VStack>
