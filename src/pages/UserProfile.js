@@ -1,72 +1,118 @@
 import React, {useState} from 'react'
 import Form from '../components/Form/Form'
 import img from '../components/Images/Profile.jpeg'
-import { Image, GridItem, Grid, Button, Box, Text, Center } from '@chakra-ui/react'
-import { StarIcon } from '@chakra-ui/icons'
+import { SocialIcon } from "react-social-icons";
+import {   
+  Image,
+  Button,
+  Box,
+  Text,
+  HStack,
+  Stack,
+  Card,
+  CardHeader,
+  CardBody,
+  Center,
+  Heading,
+  IconButton, 
+} from '@chakra-ui/react'
+import { StarIcon, EditIcon } from '@chakra-ui/icons'
 import Items from '../components/Shop/Items'
 
+
 const UserProfile = () => {
-    const property = {    
-        reviewCount: 34,
-        rating: 4,
-    }
+  const [file, setFile] = useState(img);
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
+
+  const property = {
+    reviewCount: 34,
+    rating: 4,
+  };
+
+  const handleSubmit = () => {};
   return (
-    <div >
-        <div>
-        <Text as='b' fontSize='3xl'>Profile Settings</Text>
-            <p>
-              Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while still keeping the original meaning. The purpose here is to just get the writing started so that when the writer goes onto their day's writing projects, words are already flowing from their fingers.  
-            </p>
-        </div>
+    <>
+      <HStack spacing={"44"}>
+        <Box p={5}>
+          <Center>
+            <Card p={4} size={"lg"}>
+              <Box alignSelf={'center'}>
+                <Heading size={"md"}>Profile</Heading>
+              </Box>
+              <CardBody>
+                <Stack align="center" justify="center">
+                  <Image
+                    p={5}
+                    border="4px"
+                    borderColor="Black.500"
+                    borderRadius="full"
+                    boxSize="130px"
+                    src={file}
+                    alt="User"
+                  />
+                  <Button
+                    onClick={handleSubmit}
+                    colorScheme="teal"
+                    variant="solid"
+                  >
+                    Upload Photo
+                    <input
+                      type="file"
+                      multiple
+                      onChange={handleChange}
+                      style={{ width: "30px", height: "50px", opacity: 0 }}
+                    />
+                  </Button>
+                  <Box display="flex" mt="2" alignItems="center">
+                    {Array(5)
+                      .fill("")
+                      .map((_, i) => (
+                        <StarIcon
+                          key={i}
+                          color={i < property.rating ? "teal.500" : "gray.300"}
+                        />
+                      ))}
+                    <Box as="span" ml="2" color="blue.600" fontSize="sm">
+                      {property.reviewCount} reviews
+                    </Box>
+                  </Box>
+                </Stack>
+              </CardBody>
 
-        <div>
-        <Grid
-            h="auto"
-            gridTemplateColumns='repeat(2, 1fr)'
-            gap={4}
-            p={5}
-        >
-            <GridItem rowSpan="auto" colSpan="auto">
-            <div>
-            <Image
-                border='4px' borderColor='Black.500'
-                borderRadius='full'
-                boxSize='130px'
-                src={img}
-                alt='User'
-            />
-            </div>
-            <Box display='flex' mt='2' alignItems='center'>
-            {Array(5)
-                .fill('')
-                .map((_, i) => (
-                <StarIcon
-                    key={i}
-                    color={i < property.rating ? 'teal.500' : 'gray.300'}
-                />
-                ))}
-                <Box as='span' ml='2' color='blue.600' fontSize='sm'>
-                {property.reviewCount} reviews
-                </Box>
-            
+              <Stack spacing="1">
+                <Text textAlign={"center"}>name</Text>
+                <Text textAlign={"center"}>Email ID</Text>
+              </Stack>
+            </Card>
+          </Center>
+          <Card p={5}>
+            <Heading size={"md"}>Social Media</Heading>
+            <Box position="absolute" right={2} top={2}>
+              <IconButton
+                onClick={() => console.log("Edit button clicked")}
+                icon={<EditIcon />}
+              />
             </Box>
-            <input type="file" hidden/>
-            <Button colorScheme='teal' variant='solid'>
-                Upload Photo
-            </Button>
-            <Text>Name</Text>
-            <Text>Email ID</Text>
-            </GridItem>
 
-            <GridItem rowSpan="auto" colSpan="auto">
-            <div>
-                <Form />
-            </div>
-            </GridItem>
-        </Grid>
-        </div>
-        <Items userprofile = {true} username={localStorage.getItem('user')} /> 
-    </div>
+            <HStack spacing={"5"} align="center" p={5}>
+              ReactDOM.render(
+              <SocialIcon url="https://linkedin.com/" />, document.body);
+              ReactDOM.render(
+              <SocialIcon url="https://instagram.com/" />, document.body);
+              ReactDOM.render(
+              <SocialIcon url="https://twitter.com/" />, document.body);
+            </HStack>
+          </Card>
+        </Box>
+        <Box>
+          <Form />
+        </Box>
+      </HStack>
+      <Items userprofile = {true} username={localStorage.getItem('user')} /> 
+    </>
   )
 }
 
