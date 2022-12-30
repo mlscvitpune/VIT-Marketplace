@@ -7,8 +7,10 @@ import {
   Heading,
   Spacer,
   Avatar,
-  AvatarGroup
+  AvatarGroup,
+  IconButton,
 } from "@chakra-ui/react";
+import { FaShoppingCart } from "react-icons/fa";
 
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -38,7 +40,7 @@ const Navbar = () => {
                 return (
                   <>
                     <Button colorScheme='teal' onClick={() => { navigate('/shop') }}>Shop</Button>
-                    <Button colorScheme='teal' onClick={() => { navigate('/cart') }}>Cart</Button>
+                    <IconButton as={FaShoppingCart} onClick={() => { navigate('/cart') }}></IconButton>
                     <Button colorScheme='teal' onClick={() => { navigate('/login') }}>Logout</Button>
                     <Button colorScheme='teal' onClick={() => { navigate('/newItem') }}>Add Item</Button>
                     <Button colorScheme='teal' onClick={() => { 
