@@ -56,6 +56,7 @@ function AddNewItem() {
     <>
     <Box display='flex' w='100%' bg='blue' alignItems='center' flexDirection='column'>
       <Box display='flex' justifyContent='center'  w={['85%','70%']}  bg='white' flexDirection='column' mt='5rem' mb='5rem' borderRadius='5px'>
+        <Box display='flex' justifyContent='center'  w="100%" mt='1rem'><Heading fontWeight='normal'>ITEM DETAILS</Heading></Box>
         <Box display='flex' justifyContent='center'  w="100%" h="100%" flexDirection={['column','column','row']}>
           <Box w={['100%','100%','48%']} h='100%'  display='flex' justifyContent='flex-start'>
             <Box display='flex' justifyContent='flex-start' m='2rem' flexDirection='column' w='90%'>
