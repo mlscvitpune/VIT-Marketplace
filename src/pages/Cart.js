@@ -96,7 +96,7 @@ const Cart = () => {
         <Divider borderWidth="1px"/>
         </Box>
         
-        <Button bgColor={"grey"}>CHECK OUT</Button>
+        <Button bgColor={"teal"}>CHECK OUT</Button>
       </Card>
     </HStack>
     </Flex>
