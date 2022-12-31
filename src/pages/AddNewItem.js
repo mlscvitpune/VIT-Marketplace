@@ -3,7 +3,22 @@ import SingleItemView from './SingleItemView';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {create} from '../apiCalls';
-
+import {
+  Box,
+  Button,
+  Container,
+  Text,
+  InputGroup,
+  Input,
+  InputRightAddon,
+  Flex,
+  SimpleGrid,
+  Heading,
+  VStack,
+  Select,
+  Textarea,
+  Image
+} from "@chakra-ui/react";
 function AddNewItem() {
   const [TITLE, setTITLE] = useState('');
   const [Category, setCategory] = useState('');
@@ -37,47 +52,74 @@ function AddNewItem() {
       window.alert("Error adding item");
     }
   }
+  return(
+    <>
+    <Box display='flex' w='100%' bg='blue' alignItems='center' flexDirection='column'>
+      <Box display='flex' justifyContent='center'  w={['85%','70%']}  bg='white' flexDirection='column' mt='5rem' mb='5rem' borderRadius='5px'>
+        <Box display='flex' justifyContent='center'  w="100%" mt='1rem'><Heading fontWeight='normal'>ITEM DETAILS</Heading></Box>
+        <Box display='flex' justifyContent='center'  w="100%" h="100%" flexDirection={['column','column','row']}>
+          <Box w={['100%','100%','48%']} h='100%'  display='flex' justifyContent='flex-start'>
+            <Box display='flex' justifyContent='flex-start' m='2rem' flexDirection='column' w='90%'>
+              <Text mb='1rem' color='black' fontSize={['lg','lg','xl']}>Item Name</Text>
+              <Input placeholder='Item Name' size='lg' mb='2rem'w='100%'  value={TITLE} onChange={(e) => setTITLE(e.target.value)}/>
+              <Text mb='1rem' color='black' fontSize={['lg','lg','xl']}>category</Text>
+              <Select variant='filled' placeholder='select category' size='lg' mb='2rem' w='100%'  value={Category} onChange={(e) =>{
+                if(e.target.value){
+                setCategory(e.target.value)}}}>
+                <option values='Hardware'>Hardware</option>
+                <option values='Home Appliances'>Home Appliances</option>
+                <option values='Other'>Other</option>
+          
+              </Select>
+          
+              <Text mb='1rem' color='black' fontSize={['lg','lg','xl']}>Images</Text>
+              <input type='file' className='
+              file:bg-gradient-to-b file:from-blue-500 file:to-blue-600
+              file:px-6 file:py-2 
+             
+              file:rounded-full
+              file:text-white
+              file:cursor-pointer
+              file:border-none
+              fileshadow-lg file:shadow-blue-600/50
+              text-black/80
+              rounded-2
+              cursor-pointer
+          
 
-  return (
-    <div className="min-w-full	 min-h-screen inline-flex overflow-hidden h-full items-center ">
-      <div className="w-1/3  h-full min-h-full inline-flex flex-col	relative aitems-center truncate	 bg-white">
-        <div>
-          <input type="file" multiple onChange={handleChange} />
-          <img src={file} />
-        </div>
+              ' onChange={handleChange}>
+              </input>
+             
+              <Image src={file}></Image>
 
-      </div>
+            </Box>
+          </Box>
+          <Box w={['100%','100%','48%']} h='100%'  display='flex' justifyContent='flex-start'>
+            <Box display='flex' justifyContent='flex-start' m='2rem' flexDirection='column' w='90%'>
+              <Text mb='1rem' color='black' fontSize={['lg','lg','xl']}>Description</Text>
+              <Textarea placeholder='Item Description' size='lg' mb='2rem'w='100%' type='text' value={Description} onChange={(e) => setDesc(e.target.value)}/>
+              <Text mb='1rem' color='black' fontSize={['lg','lg','xl']}>Quantity</Text>
+              <Input placeholder='Qunatity' size='lg' mb='2rem' w='100%' type='number' value={Quantity} onChange={(e) => setQuantity(e.target.value)}/>
+              <Text mb='1rem' color='black' fontSize={['lg','lg','xl']}>Selling Price</Text>
+              <Input placeholder='Selling Price' size='lg' mb='2rem'w='100%' type='number' value={SP} onChange={(e) => setSP(e.target.value)} />
 
-      <div className="w-1/3  h-full min-h-screen inline-flex flex-col	 relative justify-items-center justify-around items-center border-dashed border-x-2 truncate	 bg-gradient-to-r from-[#0071FF] to-blue-200">
+            </Box>
 
-        <p className="text-2xl text-center	 text-black py-6"> Title:</p>
-        <input type="text" placeholder="Title" className="w-3/6 sm:w-11/12 h-10 border-2 m-3  border-gray-300 rounded-md p-2" value={TITLE} onChange={(e) => setTITLE(e.target.value)} />
+          </Box>
+      </Box>
+      <Box w='100%' display='flex' justifyContent='center' mb='2rem'>
+        <Button  onClick={handleSubmit}  bg="black"
+                _hover={{ opacity: "0.8" }} color='white' w={['100px','200px']}>Submit</Button>
+      </Box>
+        
 
-        <p className="text-2xl text-center	 text-black py-6"> Category:</p>
-        <input type="text" placeholder="Category(Electronics,IOT, Dailyuse etc.)" className="w-3/6 sm:w-11/12 h-10 border-2 m-3  border-gray-300 rounded-md p-2" value={Category} onChange={(e) => setCategory(e.target.value)} />
+      </Box>
 
-
-        <p className="text-2xl text-center	 text-black py-6"> Selling Price:</p>
-        <input type="text" placeholder="Selling Price" className="w-3/6 sm:w-11/12 h-10 border-2 m-3  border-gray-300 rounded-md p-2" value={SP} onChange={(e) => setSP(e.target.value)} />
-
-        <p className="text-2xl text-center	 text-black py-6"> Quantity:</p>
-        <input type="integer" placeholder="Quantity" className="w-3/6 sm:w-11/12 h-10 border-2 m-3  border-gray-300 rounded-md p-2" value={Quantity} onChange={(e) => setQuantity(e.target.value)} />
-
-      </div>
-
-      <div className="w-1/3 h-full min-h-full inline-flex flex-col	 relative items-center truncate	 bg-white" >
-        <div className="w-full  h-full  inline-flex flex-col	 relative items-center truncate	 bg-white">
-          <textarea
-            placeholder="Describe the item"
-            className=" sm:w-11/12  min-h-fit	 border-2 m-3  border-gray-300 rounded-md p-2" value={Description} onChange={(e) => setDesc(e.target.value)}
-          ></textarea>
-        </div>
-        <div className="w-[50%]  h-full min-h-full inline-flex flex-col	 relative items-center truncate">
-          <button onClick={handleSubmit} className="bg-[#0071FF] text-xl text-white px-8 h-10 rounded-md">Done</button>
-        </div>
-      </div>
-    </div>
+    </Box>
+    
+    </>
   )
+
 }
 
 export default AddNewItem
