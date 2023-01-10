@@ -29,7 +29,6 @@ router.post("/read", async (req, res) => {
   if (!req.body.userprofile) {
     try {
       const items = await Item.find({}).exec();
-      console.log(items);
       res.status(200).json({ items });
     } catch (error) {
       res.status(404).json({ error: error.message });

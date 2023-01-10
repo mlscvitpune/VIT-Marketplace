@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import Dash from "../DashStart/Dash";
-import { display, delete_item } from "../../apiCalls";
+import { display, delete_item, add_to_cart } from "../../apiCalls";
 
 const Items = (props) => {
     const [items, setItems] = React.useState();
@@ -30,6 +30,13 @@ const Items = (props) => {
     const deleteItem = async (id) => {
         console.log(id);
         const res = await delete_item("http://localhost:5000/item/delete", id);
+        window.alert(res.message);
+        window.location.reload();
+    };
+
+    const addToCart = async (id, username) => {
+        console.log(username);
+        const res = await add_to_cart("http://localhost:5000/cart/add", id, username);
         window.alert(res.message);
         window.location.reload();
     };
@@ -82,7 +89,7 @@ const Items = (props) => {
                                     >
                                         Seller: {item.username}
                                     </Text>
-                                    {props.userprofile ? <Button onClick={()=>{deleteItem(item._id)}} className="flex p-0.5 justify-center">Delete</Button> : <Button className="flex justify-center p-0.5">Add to cart</Button>}
+                                    {props.userprofile ? <Button onClick={()=>{deleteItem(item._id)}} className="flex p-0.5 justify-center">Delete</Button> : <Button onClick={() => {addToCart(item._id, localStorage.getItem('user'))}} className="flex justify-center p-0.5">Add to cart</Button>}
                                 </Box>
                             );
                         }).reverse()}

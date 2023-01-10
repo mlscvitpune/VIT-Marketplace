@@ -1,13 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { DeleteIcon } from '@chakra-ui/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button, ButtonGroup, Card,Divider, HStack,Stack, Image, VStack, Text, Flex, Box,Checkbox, CheckboxGroup, Select, NumberInput} from '@chakra-ui/react'
 import img1 from "../components/Images/nodeMCU.jpeg"
 import img2 from "../components/Images/arduinoUNO.jpeg"
-
+import axios from "axios";
 
 
 const Cart = () => {
+  const [cartItems, setCartItems] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get(`http://localhost:5000/cart/read/${localStorage.getItem('user')}`);
+      setCartItems(data.items);
+    };
+    fetchData();
+  }, [])
+
   const navigate = useNavigate();
   const Imgs = { img1, img2}
   const [quantity, setQuantity] = useState(1);
