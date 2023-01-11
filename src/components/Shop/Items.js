@@ -38,7 +38,6 @@ const Items = (props) => {
         console.log(username);
         const res = await add_to_cart("http://localhost:5000/cart/add", id, username);
         window.alert(res.message);
-        window.location.reload();
     };
 
     return (
