@@ -19,6 +19,9 @@ app.use(express.json());
 const itemRoutes = require('./crud');
 app.use('/item', itemRoutes);
 
+const cartRoutes = require('./cartCrud');
+app.use('/cart', cartRoutes);
+
 const port = process.env.PORT || 5000;
 
 //public routes

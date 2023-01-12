@@ -48,4 +48,30 @@ const delete_item = async (url, id) => {
     return response.json()
 }
 
-export {create, display, delete_item};
+const add_to_cart = async (url, id, username) => {
+    const response = await fetch(url, {
+        method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                id: id,
+                username: username
+            }),
+    })
+    return response.json()
+}
+
+
+const display_cart = async (url, username) => {
+    const response = await fetch(url, {
+        method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({username: username}),
+    })
+    return response.json()
+}
+
+export {create, display, delete_item, add_to_cart, display_cart};

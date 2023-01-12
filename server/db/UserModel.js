@@ -17,6 +17,7 @@ const User = new mongoose.Schema(
       required: [true, "Please provide a password"],
       unique: false,
     },
+    cart: [ String ],
   },
   { collection: "user-data" }
 );
